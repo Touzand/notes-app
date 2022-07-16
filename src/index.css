@@ -29,7 +29,6 @@ body {
 }
 
 main {
-  min-height: 100vh;
   max-height: auto;
   padding-bottom: 60px;
   position: relative;
@@ -254,10 +253,11 @@ aside {
   height: 100px;
   overflow: hidden;
   word-break: break-word;
+  cursor:pointer;
 }
 
 #note-content p {
-  margin-top: 0;
+  margin-top: 0
 }
 
 .note-header {
@@ -492,6 +492,7 @@ footer {
   outline: none;
   font-size: 2rem;
   margin-left: 0.5rem;
+  cursor:pointer;
 }
 
 .note-view button:nth-child(1) {
