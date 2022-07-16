@@ -17,16 +17,14 @@ if (!effectCalled.current) {
 
 }
 
-//this force one render after the effect is run
 setVal(val=>val+1)
 
 return ()=>{
-//if the comp didn´t render since the useEffect was called, we know it´s the dummy react cycle
 if(!renderAfterCalled.current){return;}
 if(destroyFunc.current){destroyFunc.current();}
 }
 },[])
-
+t
 
 
 }
