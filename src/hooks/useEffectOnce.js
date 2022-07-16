@@ -11,7 +11,6 @@ if (effectCalled.current) {
 }
 
 useEffect(()=>{
- //only execute the effect first time around
 if (!effectCalled.current) {
         destroyFunc.current = effect();
         effectCalled.current = true;
