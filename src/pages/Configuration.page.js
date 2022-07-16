@@ -34,6 +34,7 @@ const Configuration = () => {
     <main className="configuration-container">
       <h2>Configuration</h2>
       <hr />
+      <div className="toggle-container">
       <div className="toggle">
         <h3>Small size notes</h3>
         <ToggleSwitch onChange={handleChange} name="size" />
@@ -45,6 +46,7 @@ const Configuration = () => {
       <div className="toggle">
         <h3>Dark mode</h3>
         <ToggleSwitch onChange={handleChange} name="theme" />
+      </div>
       </div>
   </main>
   );
