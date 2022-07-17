@@ -43,10 +43,10 @@ function MainContent() {
         <div className="main-container">
           <Router>
             <Routes>
-              <Route path="/" exact element={<Notes userName={userName} />} />
-              <Route path="help" exact element={<Help />} />
-              <Route path="statistics" exact element={<Statistics />} />
-              <Route path="configuration" exact element={<Configuration />} />
+              <Route path="notes-app/" exact element={<Notes userName={userName} />} />
+              <Route path="notes-app/help" exact element={<Help />} />
+              <Route path="notes-app/statistics" exact element={<Statistics />} />
+              <Route path="notes-app/configuration" exact element={<Configuration />} />
             </Routes>
             <div className="aside-container">
               <Aside />

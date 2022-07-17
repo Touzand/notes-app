@@ -3,7 +3,7 @@ import ToggleSwitch from "../components/ToggleSwitch";
 import { useStickyState } from "../hooks/useStickyState";
 
 const Configuration = () => {
-  const [configuration, setConfiguration] = useStickyState({}, "config");
+  const [configuration, setConfiguration] = useStickyState({theme:'light'}, "config");
 
   useEffect(() => {
     if (configuration.fullscreen) {
