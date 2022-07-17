@@ -10,7 +10,7 @@ const initialForm = {
   content: "",
 };
 
-const NoteForm = props => {
+const NoteForm = (props) => {
   const [body, setBody] = useState(initialForm);
   const [preview, setPreview] = useState(false);
 
@@ -33,6 +33,11 @@ const NoteForm = props => {
     setPreview(true);
   };
 
+  const handleBack = () => {
+    props.setVisible(false);
+    setBody(initialForm);
+  };
+
   return (
     <div
       className="form-panel"
@@ -48,15 +53,12 @@ const NoteForm = props => {
             name="title"
             placeholder="Title"
             onChange={handleChange}
+            autoFocus
           />
-          <button onClick={handlePreview}>
+          <button onClick={handlePreview} tabIndex="-1">
             <i className="bi bi-back"></i>
           </button>
-          <button
-            onClick={() => {
-              props.SetVisible(false);
-            }}
-          >
+          <button onClick={handleBack} tabIndex="-1">
             <i className="bi bi-trash-fill"></i>
           </button>
         </div>

@@ -6,7 +6,7 @@ import NoteView from "../components/NoteView";
 import NoNote from "../components/NoNotes";
 import { useStickyState } from "../hooks/useStickyState";
 
-const Notes = props => {
+const Notes = (props) => {
   const [visible, setVisible] = useState(false);
   const [noteViewData, setNoteViewData] = useState({});
   const [noteViewVisible, setNoteViewVisible] = useState(false);
@@ -26,12 +26,23 @@ const Notes = props => {
     if (index !== -1) newData.splice(index, 1);
     localStorage.setItem("data", JSON.stringify(newData));
     setData(newData);
+
+    console.log(document.querySelectorAll(".note")[e.currentTarget.id]);
+    document.querySelectorAll(".note")[index].style.display = "none";
+
+    console.log(document.querySelector("#notes-container"));
+    document.querySelector("#notes-container").style.display = "none";
+    document.querySelector("#notes-container").style.display = "grid";
+
     window.location.reload(false);
   };
 
   return (
     <main>
       <button
+            style={{
+              display: `${visible || noteViewVisible ? "none" : "block"}`,
+            }}
         className="add-icon"
         onClick={() => {
           setVisible(true);
@@ -40,19 +51,18 @@ const Notes = props => {
         <i className="bi bi-pencil-square"></i>
       </button>
 
-
       {noteViewVisible && (
-          <NoteView
-            noteViewData={noteViewData}
-            id={noteViewId}
-            setNoteViewVisible={setNoteViewVisible}
-            noteViewVisible={noteViewVisible}
-            setData={setData}
-            data={data}
-          />
+        <NoteView
+          noteViewData={noteViewData}
+          id={noteViewId}
+          setNoteViewVisible={setNoteViewVisible}
+          noteViewVisible={noteViewVisible}
+          setData={setData}
+          data={data}
+        />
       )}
 
-        <UserProfilePanel userProfileName={props.userName} />
+      <UserProfilePanel userProfileName={props.userName} />
 
       <div className="notes-bottom">
         {visible && (
@@ -65,8 +75,8 @@ const Notes = props => {
           />
         )}
 
-          {data.length === 0 ? (
-            <NoNote>
+        {data.length === 0 ? (
+          <NoNote>
             <h3>You dont have any notes :(</h3>
             <p>
               to add a note just tab on the "
@@ -98,6 +108,6 @@ const Notes = props => {
       </div>
     </main>
   );
-}
+};
 
 export default Notes;

@@ -15,8 +15,8 @@ const InformationPanel = () => {
         <p>
           Here you can write notes using <b>Mark Down</b> or just with normal
           text. You can save and edit your note later if you want to. If u have
-          any questions or doubt just tab on the "<b>?</b>" bellow the screen
-          and you will see some information to help you so let write it.{" "}
+          any questions or doubt just tab on the "<b>?</b>"on the navigation bar
+          and you will see some information to help you, so let write it.{" "}
         </p>
         <button onClick={handlePanel}>Dont show me this message again</button>
       </div>
