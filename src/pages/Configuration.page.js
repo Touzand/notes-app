@@ -22,12 +22,19 @@ const Configuration = () => {
     }
   }, [configuration.fullscreen]);
 
-  useEffect(() => {
+  //useEffect(() => {
+      //document.getElementById("main").classList.toggle("dark");
+  //}, [configuration.theme]);
+  
+  const changeTheme = () =>{
       document.getElementById("main").classList.toggle("dark");
-  }, [configuration.theme]);
+  }
 
   const handleChange = (e) => {
     setConfiguration({ ...configuration, [e.target.name]: e.target.value });
+    if(e.target.name === 'theme'){
+      changeTheme()
+    }else{return}
   };
 
   return (
