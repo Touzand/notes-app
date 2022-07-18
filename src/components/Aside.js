@@ -17,6 +17,7 @@ const Aside = () => (
             className={({ isActive }) => (isActive ? "active" : "inactive")}
             to="notes-app/statistics"
           >
+
             <i className="bi bi-bar-chart-line-fill"></i>
           </NavLink>
         </div>
