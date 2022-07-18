@@ -15,7 +15,7 @@ const Aside = () => (
         <div className="link">
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "inactive")}
-            to="notes-app/statistics"
+          to="https://touzand.github.io/notes-app/statistics"
           >
             <i className="bi bi-bar-chart-line-fill"></i>
           </NavLink>
