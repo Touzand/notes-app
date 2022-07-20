@@ -22,14 +22,6 @@ const Configuration = () => {
     }
   }, [configuration.fullscreen]);
 
-
-
-  //useEffect(() => {
-      //document.getElementById("main").classList.toggle("dark");
-  //}, [configuration.theme]);
-  
-
-
   const changeTheme = () =>{
       document.getElementById("main").classList.toggle("dark");
   }
